@@ -1,0 +1,8 @@
+.container{
+    text-align: center;
+    width: 500px;
+}
+
+.main{
+    border: 1px dashed black;
+}

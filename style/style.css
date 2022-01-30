@@ -1,0 +1,90 @@
+body{
+    background: linear-gradient(to right, aquamarine, #6060ee);
+    font-family: "Roboto Light";
+    font-size: large;
+}
+header{
+    /*border: 3px solid blue;*/
+    text-align: left;
+    height: 90px;
+}
+
+.btn{
+    display: inline-block;
+    background: #70afe8;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+#links{
+    display: inline;
+    text-align: left;
+    margin-left: 55%;
+}
+
+#image{
+    display: inline;
+    float: left;
+    width: 25%;
+    /*border: 1px solid black;*/
+    /*height: 35%;*/
+}
+
+#fio{
+    /*border: 3px solid green;*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    margin-bottom: 20px;
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: 900;
+    padding-left: 50%;
+
+}
+
+#about_me{
+    display: inline;
+    float: left;
+    width: 35%;
+    /*border: 3px solid orangered;*/
+    margin-left: 2%;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Light";
+}
+
+#about_courses{
+    /*border: 3px solid gray;*/
+    display: inline;
+    float: left;
+    width: 35%;
+    margin-left: 2%;
+    text-align: center;
+    font-size: 20px;
+}
+
+#img{
+    float: left;
+    margin-top: 50px;
+    border-radius: 50%;
+    box-shadow: 30px -16px teal;
+
+}
+#img1{
+    width: 80px;
+    display: inline;
+    margin-right: 20px;
+}
+
+.vl{
+    display: inline;
+    border-left: 2px solid black;
+    height: 250px;
+    position: absolute;
+    left: 58%;
+    margin-left: -3px;
+    top: 0;
+    margin-top: 170px;
+}
