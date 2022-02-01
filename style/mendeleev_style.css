@@ -1,0 +1,24 @@
+.bor_elem{
+    margin-top: 0;
+    font-size: 17px;
+    margin-right: 10px;
+    max-height: 5px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.zoom{
+    transition: transform .2s;
+}
+
+.zoom:hover{
+    transform: scale(2);
+}
