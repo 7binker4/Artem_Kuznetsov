@@ -1,7 +1,8 @@
 body{
-    background: linear-gradient(to right, aquamarine, #6060ee);
+    /*background: linear-gradient(to right, aquamarine, #6060ee);*/
     font-family: "Roboto Light";
     font-size: large;
+    font-size: 25px;
 }
 header{
     /*border: 3px solid blue;*/
@@ -45,8 +46,9 @@ header{
 
 .div1 {
     margin: 15px;
-    /*border: 1px solid black;*/
-    background-color: #70aeea;
+    /*!*border: 1px solid black;*!*/
+    /*background-color: #70aeea;*/
+
 }
 
 .photo {
@@ -58,7 +60,7 @@ header{
 .opisanie {
     text-align: center;
     height: 50px;
-    display: flex;
+    /*display: flex;*/
 }
 
 .container1 {

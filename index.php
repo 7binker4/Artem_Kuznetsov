@@ -1,3 +1,19 @@
+<?php
+date_default_timezone_set('Europe/Moscow');
+$dateNow = date('H:i');;
+echo "Время Московское: $dateNow";
+
+if ($dateNow >= 8 and $dateNow < 20){
+    echo "<style> 
+            body {background: linear-gradient(to right, aquamarine, #6060ee);}
+          </style>";
+} else{
+    echo "<style> body {background: linear-gradient(to left, #050565, #1414af);
+                        color: lightgray;}
+          </style>";
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
