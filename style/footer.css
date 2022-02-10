@@ -1,0 +1,11 @@
+.footer{
+    border-top: 2px solid blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: linear-gradient(to right, #118d98, #3030e3);
+}
+
+.contact{
+    text-align: end;
+}

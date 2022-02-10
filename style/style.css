@@ -1,9 +1,10 @@
 body{
-    /*background: linear-gradient(to right, aquamarine, #6060ee);*/
+    background: linear-gradient(to right, aquamarine, #6060ee);
     font-family: "Roboto Light";
     font-size: large;
     font-size: 25px;
 }
+
 header{
     /*border: 3px solid blue;*/
     text-align: left;
@@ -167,6 +168,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 40px;
+    border-top: 1px solid blue;
 }
 
 nav ul {

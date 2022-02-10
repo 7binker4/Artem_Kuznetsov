@@ -1,47 +1,18 @@
 <?php
-date_default_timezone_set('Europe/Moscow');
-$dateNow = date('H:i');;
-echo "Время Московское: $dateNow";
-
+date_default_timezone_set('asia/yekaterinburg');
+$dateNow = date('H:i');
 if ($dateNow >= 8 and $dateNow < 20){
     echo "<style> 
-            body {background: linear-gradient(to right, aquamarine, #6060ee);}
+            main {background: linear-gradient(to right, aquamarine, #2e2ec4);}
           </style>";
 } else{
-    echo "<style> body {background: linear-gradient(to left, #050565, #1414af);
+    echo "<style> main {background: linear-gradient(to left, #050565, #1414af);
                         color: lightgray;}
           </style>";
 }
 ?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<header>
-    <div class="header">
-        <img id="img1" src="images/logo1.png" alt="Лого">
-        <!--<div class="links"><a href="mendeleev.html" class="btn">Таблица Менделеева</a></div>
-        <div><a href="dop_homework.html" class="btn">Дополнительное задание</a></div>-->
-        <nav class="nav">
-            <ul class="topmenu">
-                <li style="width: 50px"><a style="width: 50px" href="" class="down"><img align="left" style="border-radius: 25px" width="100%" src="images/awesome_burger.gif"  alt="Меню"></a>
-                    <ul class="submenu">
-                        <li><a href="mendeleev.html">Менделеев</a></li>
-                        <li><a href="dop_homework.html">Доп. задание</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
+<?php require_once 'inc/header.php' ?>
 <main>
     <div class="fio"><b>Артем Кузнецов</b></div>
     <div class="main">
@@ -105,5 +76,4 @@ if ($dateNow >= 8 and $dateNow < 20){
         </div>
     </div>
 </main>
-</body>
-</html>
+<?php require_once 'inc/footer.php'?>
