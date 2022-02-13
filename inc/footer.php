@@ -1,6 +1,18 @@
 <footer>
     <div class="footer">
-        <div></div>
+        <div><?
+            global $dateDiff;
+            echo "Разница в днях =  $dateDiff";
+            echo "<br>";
+
+            global $result_str;
+            echo "Количество слов = $result_str";
+            echo "<br>";
+
+            global $count;
+            echo "Количество гласных = $count";
+            ?>
+        </div>
         <div></div>
         <div></div>
         <div></div>
