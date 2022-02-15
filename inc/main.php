@@ -1,5 +1,21 @@
 <?php
+session_start();
 
+//Работа с датой
+date_default_timezone_set('asia/yekaterinburg');
+$dateNow = date('H:i');
+function foo1($dateNow)
+{
+    if ($dateNow >= 8 and $dateNow < 20) {
+        return "<style> 
+            main {background: linear-gradient(to right, aquamarine, #2e2ec4);}
+          </style>";
+    } else {
+        return "<style> main {background: linear-gradient(to left, #050565, #1414af);
+                        color: lightgray;}
+          </style>";
+    }
+}
 ?>
 
 <main>
@@ -77,6 +93,9 @@
 
 <?php
 $text  = $str . $str1 . $str2 . $str3 . $str4 . $str5 . $str6 . $str7 . $str8 . $str9;
-$result_str = count(explode(' ', $text));
-$count = preg_match_all('/[ёуеыаоэяиюЁУЕЫАОЭЯИЮ]/i', $text, $m) / 2;
+
+$_SESSION['letters'] = $text;
+
 ?>
+
+

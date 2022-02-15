@@ -1,16 +1,18 @@
+<?php
+session_start();
+$get = $_SESSION['letters'];
+?>
+
 <footer>
     <div class="footer">
         <div><?
-            global $dateDiff;
-            echo "Разница в днях =  $dateDiff";
+            echo 'Разница в днях = ' . diffDays();
             echo "<br>";
 
-            global $result_str;
-            echo "Количество слов = $result_str";
+            echo 'Количество слов = ' . words($get);
             echo "<br>";
 
-            global $count;
-            echo "Количество гласных = $count";
+            echo 'Количество гласных = '  . letters($get);
             ?>
         </div>
         <div></div>

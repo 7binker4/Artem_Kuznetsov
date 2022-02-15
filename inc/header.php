@@ -24,6 +24,7 @@
                         <li><a href="inc/mendeleev.html">Менделеев</a></li>
                         <li><a href="inc/dop_homework.html">Доп. задание</a></li>
                         <li><a href="inc/09.02.2022.php">Задание от 09.02.2022</a></li>
+                        <li><a href="inc/14.02.2022.php">Задание от 14.02.2022</a></li>
                         <li><a href="inc/func.php">Тестовый полигон</a></li>
                     </ul>
                 </li>
