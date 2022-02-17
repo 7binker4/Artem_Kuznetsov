@@ -49,4 +49,5 @@ function foo5($str){
     }
 }
 echo foo5($str);
+
 ?>

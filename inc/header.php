@@ -1,4 +1,10 @@
+<?php
+session_start();
+$auth = $_SESSION['auth'];
+$login = $_SESSION['login'];
+?>
 
+<?php ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,21 +20,42 @@
 <body>
 <header>
     <div class="header">
-        <img id="img1" src="images/logo1.png" alt="Лого">
-        <!--<div class="links"><a href="mendeleev.html" class="btn">Таблица Менделеева</a></div>
-        <div><a href="dop_homework.html" class="btn">Дополнительное задание</a></div>-->
-        <nav class="nav">
-            <ul class="topmenu">
-                <li style="width: 50px"><a style="width: 50px" href="" class="down"><img align="left" style="border-radius: 25px" width="100%" src="images/awesome_burger.gif" alt="Меню"></a>
-                    <ul class="submenu">
-                        <li><a href="inc/mendeleev.html">Менделеев</a></li>
-                        <li><a href="inc/dop_homework.html">Доп. задание</a></li>
-                        <li><a href="inc/09.02.2022.php">Задание от 09.02.2022</a></li>
-                        <li><a href="inc/14.02.2022.php">Задание от 14.02.2022</a></li>
-                        <li><a href="inc/func.php">Тестовый полигон</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div>
+            <img id="img1" src="images/logo1.png" alt="Лого">
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="auth">
+            <? if ($auth != ''){
+                echo "<p>Добро пожаловать, $login</p>";
+            }
+            ?>
+        </div>
+        <div class="auth">
+            <?
+            if ($auth != ''){
+                echo "<p><a href='inc/unlogin.php'>Выйти</a></p>";
+            } else echo "<p><a href='inc/login.php'>Войти</a></p>";
+            ?>
+        </div>
+        <div style="width: 50px">
+            <nav class="nav">
+                <ul class="topmenu">
+                    <li><a style="width: 50px" href=""><img style="border-radius: 25px" width="100%" src="images/awesome_burger.gif" alt="Меню"></a>
+                        <ul class="submenu">
+                            <li><a href="inc/mendeleev.html">Менделеев</a></li>
+                            <li><a href="inc/dop_homework.html">Доп. задание</a></li>
+                            <li><a href="inc/09.02.2022.php">Задание от 09.02.2022</a></li>
+                            <li><a href="inc/14.02.2022.php">Задание от 14.02.2022</a></li>
+                            <li><a href="inc/func.php">Тестовый полигон</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </header>

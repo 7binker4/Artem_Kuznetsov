@@ -2,4 +2,16 @@ header{
     background: linear-gradient(to right, #4ac6d2, #3131ea);
     height: 60px;
     border-bottom: 2px solid blue;
+    font-size: 15px;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+    height: 60px;
+}
+
+.auth{
+    font-size: 15px;
 }

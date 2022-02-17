@@ -164,13 +164,6 @@ header{
     }
 }
 
-.header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 40px;
-    border-top: 1px solid blue;
-}
-
 nav ul {
     list-style: none;
     margin: 0;
@@ -192,13 +185,12 @@ nav a {
 .topmenu > li > a {
     font-family: 'Exo 2', sans-serif;
     height: 70px;
-    line-height: 70px;
-
+    line-height: 80px;
+    margin-left: 10px;
     font-weight: bold;
     color: #003559;
     text-transform: uppercase;
     /*transition: .4s ease-in-out;*/
-    text-align: left;
 }
 .down:after {
 
@@ -231,4 +223,8 @@ nav a {
 ul, li, nav{
     display: inline;
     margin-left: auto;
+}
+
+.auth{
+    text-align: end;
 }

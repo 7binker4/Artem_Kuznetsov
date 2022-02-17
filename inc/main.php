@@ -24,24 +24,26 @@ function foo1($dateNow)
         <div align="center"><img id="img" src="images/jOP0dbKmH9s.jpg" width="70%" height="80%" alt="Фотография профиля"></div>
         <div class="about_me">
             <? $str = "Всем привет! Немного расскажу о себе. Родился в Магнитогорске в 2000 году. В 2018 окончил шкoлу и на данный момент являюсь студентом 4 курса МГТУ им. Носова. Учусь на кафедре: Информатика и вычислительная техника. Во время учебной практике был опыт работы в кампании Информсервис. Периодически занимаюсь самообучением в мире web-технологий. За 4 года обучения я понял что душа лежит больше к web разработке. Увлекаюсь воллейболом и компьютерными технологиями.";
-            $str_me = explode(' ', $str);
-            for ($key = 0, $size = count($str_me); $key < $size; $key++){
-                if ($key >= 0 and $key <= 5){
-                    echo'<p style="color: yellow; display: inline; float: left; height: 20px; align: center"> ' . $str_me[$key] . '&nbsp' . '</p>';
-                } else {
-                    echo  '<p style="display: inline; float: left; height: 20px; align: center">' . $str_me[$key] . '&nbsp' . '</p>';
-                }
-            }?>
+                    echo $str;
+            //           $str_me = explode(' ', $str);
+//            for ($key = 0, $size = count($str_me); $key < $size; $key++){
+//                if ($key >= 0 and $key <= 5){
+//                    echo'<p style="color: yellow; display: inline; float: left; height: 20px; align: center"> ' . $str_me[$key] . '&nbsp' . '</p>';
+//                } else {
+//                    echo  '<p style="display: inline; float: left; height: 20px; align: center">' . $str_me[$key] . '&nbsp' . '</p>';
+//                }
+//            }?>
         </div>
         <div class="about_courses"><? $str1 = "Если говорить по поводу данного курса, то мне все очень нравиться, так как уделяется внимание каждому ученику и разбираются все возможные ошибки. А так же очень понятно и доступно преподноситься материал в каждом уроке";
-            $str_courses = explode(' ', $str1);
-            for ($key = 0, $size = count($str_courses); $key < $size; $key++){
-                if ($key % 2 == 0){
-                    echo'<p style="color: red; display: inline; float: left";> ' . $str_courses[$key] . '&nbsp' . '</p>';
-                } else if ($key % 2 !== 0){
-                    echo'<p style="color: green; display: inline; float: left";"> ' . $str_courses[$key] . '&nbsp' . '</p>';
-                }
-            }?>
+                echo $str1;
+            //            $str_courses = explode(' ', $str1);
+//            for ($key = 0, $size = count($str_courses); $key < $size; $key++){
+//                if ($key % 2 == 0){
+//                    echo'<p style="color: red; display: inline; float: left";> ' . $str_courses[$key] . '&nbsp' . '</p>';
+//                } else if ($key % 2 !== 0){
+//                    echo'<p style="color: green; display: inline; float: left";"> ' . $str_courses[$key] . '&nbsp' . '</p>';
+//                }
+//            }?>
         </div>
     </div>
 
