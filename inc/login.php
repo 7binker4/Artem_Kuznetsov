@@ -2,25 +2,19 @@
 session_start();
 $logins = ['artem', 'test'];
 $passwords = ['artem', 'test'];
-
 if (!(empty($_POST))){
     $login = $_POST['text'];
     $password = $_POST['password'];
-
     if (in_array($login, $logins) && $password == $passwords[array_search($login, $logins)]){
     $auth = true;
     } else $auth = false;
-
     if (isset($_POST['password']) && in_array($_POST['password'], $_POST)){
         $_POST['password'] = md5($_POST['password']);
     } else echo "Введите пароль";
-
     if($auth === true) {
         echo "Вы успешно авторизовались в системе. Сейчас вы будете переадресованы на главную страницу сайта.";
         header('Refresh: 3; URL = ../index.php');
     }
-
-
 }
 function auth($auth, $login){
     if ($auth = true){
@@ -30,7 +24,6 @@ function auth($auth, $login){
     }
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>

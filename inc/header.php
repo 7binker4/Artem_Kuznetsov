@@ -3,7 +3,6 @@ session_start();
 $auth = $_SESSION['auth'];
 $login = $_SESSION['login'];
 ?>
-
 <?php ?>
 <!doctype html>
 <html lang="en">
@@ -20,15 +19,8 @@ $login = $_SESSION['login'];
 <body>
 <header>
     <div class="header">
-        <div>
+
             <img id="img1" src="images/logo1.png" alt="Лого">
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
         <div class="auth">
             <? if ($auth != ''){
                 echo "<p>Добро пожаловать, $login</p>";
@@ -45,7 +37,8 @@ $login = $_SESSION['login'];
         <div style="width: 50px">
             <nav class="nav">
                 <ul class="topmenu">
-                    <li><a style="width: 50px" href=""><img style="border-radius: 25px" width="100%" src="images/awesome_burger.gif" alt="Меню"></a>
+                    <li><a href=""><img style="border-radius: 25px" width="50px" src="images/awesome_burger.gif"
+                                        alt="Меню"></a>
                         <ul class="submenu">
                             <li><a href="inc/mendeleev.html">Менделеев</a></li>
                             <li><a href="inc/dop_homework.html">Доп. задание</a></li>

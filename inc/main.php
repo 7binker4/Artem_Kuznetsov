@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 //Работа с датой
 date_default_timezone_set('asia/yekaterinburg');
 $dateNow = date('H:i');
@@ -17,7 +16,6 @@ function foo1($dateNow)
     }
 }
 ?>
-
 <main>
     <div class="fio"><b>Артем Кузнецов</b></div>
     <div class="main">
