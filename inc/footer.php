@@ -15,7 +15,7 @@ $get = $_SESSION['letters'];
             echo 'Количество гласных = '  . letters($get);
             ?>
         </div>
-        <div></div>
+        <div><? echo $_SESSION['auth']?></div>
         <div></div>
         <div></div>
         <div></div>

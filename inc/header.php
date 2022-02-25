@@ -1,10 +1,24 @@
 <?php
 session_start();
+setcookie(session_name(),session_id(),time()+3600);
 $auth = $_SESSION['auth'];
 $login = $_SESSION['login'];
+$password = $_SESSION['password'];
+$color = false;
+//окрашивание из списка
+    if (isset($_POST['colors'])) {
+        if ($_POST['select'] == 'white') {
+            echo '<style>body {background-color: white;}</style>';
+            //$color = 'style = "background-color: white"';
+        }elseif ($_POST['select'] == 'yellow'){
+            echo '<style>body {background-color: white;}</style>';
+            //$color = 'style = "background-color: white"';
+        }elseif ($_POST['select'] == 'blue'){
+            echo '<style>body {background-color: white;}</style>';
+            //$color = 'style = "background-color: white"';
+        }
+    }
 ?>
-
-<?php ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,19 +31,48 @@ $login = $_SESSION['login'];
     <link rel="stylesheet" href="style/header.css">
     <title>Document</title>
 </head>
-<body>
+<body <?=$color?>>
 <header>
     <div class="header">
         <div>
             <img id="img1" src="images/logo1.png" alt="Лого">
         </div>
+        <div>
+            <a href="inc/bitrix.php">bitrix</a>
+            <a href="inc/fact.php">fact</a>
+        </div>
+        <div>
+            <?
+            if(count($_POST)>0){
+                if($auth !== ''){
+                    if (isset($_SESSION['page'])){
+                        foreach($_SESSION['page'] as $value){
+                            echo $value;
+                        }exit;
+                    }
+                }
+            }else{
+                if (isset($_SESSION['page'])){
+                    foreach($_SESSION['page'] as $value){
+                        echo $value;
+                    }
+                }
+            }
+            ?>
+        </div>
+        <div><form name="my" method="post">
+                <select name="select">
+                    <option value="white" <? if ($_POST['select'] == 'red') echo 'Выбрано';?> name="Белый">Белый</option>
+                    <option value="yellow" <? if ($_POST['select'] == 'yellow') echo 'Выбрано ';?> name="Желтый">Желтый</option>
+                    <option value="blue" <? if ($_POST['select'] == 'blue') echo 'Выбрано';?> name="Синий">Синий</option>
+                </select>
+                <input type="submit" name="colors" value="Изменить">
+            </form>
+        </div>
         <div></div>
         <div></div>
         <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="auth">
+        <div class="auth" style="width: 250px">
             <? if ($auth != ''){
                 echo "<p>Добро пожаловать, $login</p>";
             }
@@ -38,11 +81,11 @@ $login = $_SESSION['login'];
         <div class="auth">
             <?
             if ($auth != ''){
-                echo "<p><a href='inc/unlogin.php'>Выйти</a></p>";
-            } else echo "<p><a href='inc/login.php'>Войти</a></p>";
+                echo "<p><button><a href='inc/unlogin.php'>Выйти</a></button></p>";
+            } else echo "<p><button><a href='inc/login.php'>Войти</a></button></p>";
             ?>
         </div>
-        <div style="width: 50px">
+        <div style="width: 150px">
             <nav class="nav">
                 <ul class="topmenu">
                     <li><a style="width: 50px" href=""><img style="border-radius: 25px" width="100%" src="images/awesome_burger.gif" alt="Меню"></a>
@@ -51,11 +94,15 @@ $login = $_SESSION['login'];
                             <li><a href="inc/dop_homework.html">Доп. задание</a></li>
                             <li><a href="inc/09.02.2022.php">Задание от 09.02.2022</a></li>
                             <li><a href="inc/14.02.2022.php">Задание от 14.02.2022</a></li>
+                            <li><a href="inc/16.02.2022.php">Задание от 16.02.2022</a></li>
+                            <li><a href="inc/18.02.2022.php">Задание от 18.02.2022</a></li>
+                            <li><a href="inc/21.02.2022.php">Задание от 21.02.2022</a></li>
                             <li><a href="inc/func.php">Тестовый полигон</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
         </div>
+
     </div>
 </header>
