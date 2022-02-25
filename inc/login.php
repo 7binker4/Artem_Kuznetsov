@@ -24,7 +24,6 @@ function auth($auth, $login){
     }
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>

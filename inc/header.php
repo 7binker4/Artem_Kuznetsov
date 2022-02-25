@@ -19,6 +19,10 @@ $color = false;
         }
     }
 ?>
+<<<<<<< HEAD
+=======
+<?php ?>
+>>>>>>> 9b530aa3dbd431e6b545eee14c9ade4fac5a2fce
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,8 +38,9 @@ $color = false;
 <body <?=$color?>>
 <header>
     <div class="header">
-        <div>
+
             <img id="img1" src="images/logo1.png" alt="Лого">
+<<<<<<< HEAD
         </div>
         <div>
             <a href="inc/bitrix.php">bitrix</a>
@@ -73,6 +78,9 @@ $color = false;
         <div></div>
         <div></div>
         <div class="auth" style="width: 250px">
+=======
+        <div class="auth">
+>>>>>>> 9b530aa3dbd431e6b545eee14c9ade4fac5a2fce
             <? if ($auth != ''){
                 echo "<p>Добро пожаловать, $login</p>";
             }
@@ -88,7 +96,8 @@ $color = false;
         <div style="width: 150px">
             <nav class="nav">
                 <ul class="topmenu">
-                    <li><a style="width: 50px" href=""><img style="border-radius: 25px" width="100%" src="images/awesome_burger.gif" alt="Меню"></a>
+                    <li><a href=""><img style="border-radius: 25px" width="50px" src="images/awesome_burger.gif"
+                                        alt="Меню"></a>
                         <ul class="submenu">
                             <li><a href="inc/mendeleev.html">Менделеев</a></li>
                             <li><a href="inc/dop_homework.html">Доп. задание</a></li>
