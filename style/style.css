@@ -3,6 +3,7 @@ body{
     font-family: "Roboto Light";
     font-size: large;
     font-size: 25px;
+
 }
 
 header{
@@ -231,6 +232,7 @@ li{
 
 .auth{
     text-align: end;
+
 }
 
 
@@ -253,12 +255,7 @@ nav a {
     width: 150px;
 }
 
-* { box-sizing: border-box; }
-body {
-    margin: 0;
-    background: radial-gradient(#BFD6E2 1px, rgba(255,255,255,0) 2px);
-    background-size: 10px 10px;
-}
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -275,7 +272,6 @@ nav a {
     background: rgba(255,255,255,.8);
 }
 .topmenu > li {
-    display: inline-block;
     position: relative;
 }
 .topmenu > li > a {

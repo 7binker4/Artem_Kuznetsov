@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
 session_start();
-=======
->>>>>>> 9b530aa3dbd431e6b545eee14c9ade4fac5a2fce
 //Количество глассных
 function letters($get){
     return $count = preg_match_all('/[ёуеыаоэяиюЁУЕЫАОЭЯИЮ]/i', $get, $m) / 2;

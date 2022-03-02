@@ -2,16 +2,13 @@
 session_start();
 $get = $_SESSION['letters'];
 ?>
-
 <footer>
     <div class="footer">
         <div><?
             echo 'Разница в днях = ' . diffDays();
             echo "<br>";
-
             echo 'Количество слов = ' . words($get);
             echo "<br>";
-
             echo 'Количество гласных = '  . letters($get);
             ?>
         </div>
