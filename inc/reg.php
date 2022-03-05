@@ -1,60 +1,88 @@
-<?
-// Страница регистрации нового пользователя
+<?//
+require_once 'registers.php';
 
-// Соединямся с БД
-$hostname = 'localhost';
-$username = 'Artem';
-$password = '123';
-$dbname = 'fact';
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$db_con = mysqli_connect($hostname, $username, $password);
+//// Страница регистрации нового пользователя
+//
+//// Соединямся с БД
+//$hostname = 'localhost';
+//$username = 'Artem';
+//$password = '123';
+//$dbname = 'fact';
+//$db_con = mysqli_connect($hostname, $username, $password, $dbname);
+//
+//$data = $_POST;
+//
+//if (isset($data['enter'])){
+//    if ($data['upassword'] == $data['urpassword']){
+//        $login = $data['login'];
+//        $urpassword = $data['urpassword'];
+//        $upassword = $data['upassword'];
+//        $query = "INSERT INTO `users`(`id_users`, `login`, `password`) VALUES (NULL, '$login', '$upassword')";
+//        $insert = mysqli_query($db_con, $query);
+//        echo "Регистрация прошла успешно";
+//    } else echo "Ошибка при вводе данных";
+//}
+//?>
+<!---->
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form method="POST" class="reg">-->
+<!--    <h4>Регистрация</h4>-->
+<!--    <div><input type="text" name="login" value="--><?// echo @$data['login']; ?><!--" placeholder="Login"></div>-->
+<!--    <div><input type="password" name="upassword" value="--><?// echo @$data['upassword']; ?><!--" placeholder="Password"></div>-->
+<!--    <div><input type="password" name="urpassword" value="--><?// echo @$data['urpassword']; ?><!--" placeholder="Repeat Password"></div>-->
+<!--    <div><input type="submit" name="enter" value="Registration"></div>-->
+<!--    <a href="login.php" target="_blank">Авторизация</a>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
 
-if(isset($_POST['submit']))
-{
-    $err = [];
-    // проверям логин
-    if(!preg_match("/^[a-zA-Z0-9]+$/",$_POST['login']))
-    {
-        $err[] = "Логин может состоять только из букв английского алфавита и цифр";
-    }
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form method="post">
+    <h3>Registration</h3>
+    <div><input type="text" name="login" placeholder="Login" required></div>
+    <div><input type="password" name="password" placeholder="Password" required></div>
+    <button type="submit">Регистрация</button>
+    <a href="login.php">Autharisation</a>
 
-    if(strlen($_POST['login']) < 3 or strlen($_POST['login']) > 30)
-    {
-        $err[] = "Логин должен быть не меньше 3-х символов и не больше 30";
-    }
+</form>
+<p>
+    <?php
+    if (isset($_POST['submit'])){
+        $passwordUser = hash("md2", $_POST['password']);
+        $hostname = 'localhost';
+        $username = 'Artem';
+        $password = '123';
+        $dbname = 'fact';
 
-    // проверяем, не сущестует ли пользователя с таким именем
-    $query = mysqli_query($db_con, "SELECT login FROM user WHERE login='".mysqli_real_escape_string($db_con, $_POST['login'])."'");
-    if(mysqli_num_rows($query) > 0)
-    {
-        $err[] = "Пользователь с таким логином уже существует в базе данных";
-    }
-
-    // Если нет ошибок, то добавляем в БД нового пользователя
-    if(count($err) == 0)
-    {
-
-        $login = $_POST['login'];
-
-        // Убераем лишние пробелы и делаем двойное хеширование
-        $password = md5(md5(trim($_POST['password'])));
-
-        mysqli_query($db_con,"INSERT INTO user SET login='".$login."', password='".$password."'");
-        header("Location: login.php"); exit();
-    }
-    else
-    {
-        print "<b>При регистрации произошли следующие ошибки:</b><br>";
-        foreach($err AS $error)
-        {
-            print $error."<br>";
+        $register = new registers($hostname, $username, $password, $dbname);
+        $result = $register->checkLoginUser($_POST['login']);
+        if (!$result){
+            echo "Логин занят";
+        } else {
+            $query = $register->addUsers($_POST['login'], $passwordUser);
+            echo "Ргеистрация прошла упешно!";
         }
     }
-}
-?>
+    ?>
+</p>
+</body>
+</html>
 
-<form method="POST">
-    Логин <input name="login" type="text" required><br>
-    Пароль <input name="password" type="password" required><br>
-    <input name="submit" type="submit" value="Зарегистрироваться">
-</form>

@@ -1,9 +1,9 @@
 <?php
 session_start();
 setcookie(session_name(), session_id(), time() + 3600);
-$auth = $_SESSION['auth'];
-$login = $_SESSION['login'];
-$password = $_SESSION['password'];
+//$auth = $_SESSION['auth'];
+//$login = $_SESSION['login'];
+//$password = $_SESSION['password'];
 $color = false;
 //окрашивание из списка
 if (isset($_POST['colors'])) {
@@ -41,7 +41,7 @@ if (isset($_POST['colors'])) {
     <div>
         <?
         if (count($_POST) > 0) {
-            if ($auth !== '') {
+            if ($_POST['login'] !== '') {
                 if (isset($_SESSION['page'])) {
                     foreach ($_SESSION['page'] as $value) {
                         echo $value;
@@ -91,7 +91,7 @@ if (isset($_POST['colors'])) {
 
     <div style=" float:right; display: inline" class="auth">
         <?
-        if ($auth != '') {
+        if ($_POST['login'] != '') {
             echo "<p><button><a href='inc/unlogin.php'>Выйти</a></button></p>";
         } else echo "<p><button><a href='inc/login.php'>Войти</a></button></p>";
         ?>
@@ -99,8 +99,8 @@ if (isset($_POST['colors'])) {
 
 
     <div style="margin-right: 50%" class="auth">
-        <? if ($auth != '') {
-            echo "<p>Добро пожаловать, $login</p>";
+        <? if ($_POST['login'] != '') {
+            echo 'Добро пожаловать' . $_POST['login'];
         }
         ?>
     </div>
